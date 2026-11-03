@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITZONE - Fitness Center</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: white;
+    color: black;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px ;
+}
+.logo {
+    color: orangered;
+    font-size: 28px;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar a:hover {
+    color: orangered;
+}
+.hero {
+    height: 450px;
+    background: linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0, 0, 0, 0.805)
+    ),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400")
+    center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.hero-content h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.btn {
+    background-color: orangered;
+    color: azure;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: orangered;
+}
+.section {
+    padding: 60px ;
+    text-align: center;
+}
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: black;
+}
+.alternate {
+    background-color:bisque;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.card {
+    background-color: lightgrey;
+    padding: 30px 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-8px);
+}
+.card h3 {
+    color: orangered;
+    margin-bottom: 15px;
+}
+.card h2 {
+    color: orangered;
+    margin: 15px 0;
+}
+.info-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.info-box {
+    background-color: lightgrey;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: left;
+}
+.info-box h3 {
+    color: orangered;
+    margin-bottom: 20px;
+}
+.info-box p {
+    margin-bottom: 12px;
+}
+.form-container {
+    max-width: 500px;
+    margin: auto;
+    background-color: lightgrey;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+form label {
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+form input,
+form select {
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+}
+form .btn {
+    margin-top: 20px;
+}
+.fee-box {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: orangered;
+}
+#confirmation {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+    line-height: 1.8;
+}
+.faq-container {
+    max-width: 650px;
+    margin: auto;
+}
+.faq-item {
+    margin-bottom: 15px;
+    background-color: lightgrey;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.faq-question {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    background-color: #222;
+    color: lightgrey;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.faq-question:hover {
+    background-color: orangered;
+}
+.faq-answer {
+    display: none;
+    padding: 18px;
+    text-align: left;
+    line-height: 1.6;
+}
+.faq-answer.show {
+    display: block;
+}
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    line-height: 2;
+}
+footer h3 {
+    color: orangered;
+}
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    .hero {
+        height: 350px;
+    }
+    
+    .section {
+        padding: 40px 5%;
+    }
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+    .info-box {
+        width: 100%;
+    }
+    .back-to-top {
+            position:fixed;
+            right: 20px;
+            bottom: 20px;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">FITZONE</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#plans">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>BUILD YOUR BEST SELF</h1>
+            <p>Train Hard. Stay Healthy. Be Strong.</p>
+            <a href="#plans" class="btn">Join Now</a>
+        </div>
+    </section>
+    <section id="programs" class="section">
+        <h2>Our Workout Programs</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Strength Training</h3>
+                <p>Improve your strength and build muscle with guided exercises.</p>
+            </div>
+            <div class="card">
+                <h3>Cardio Training</h3>
+                <p>Improve stamina and cardiovascular fitness through cardio workouts.</p>
+            </div>
+            <div class="card">
+                <h3>Yoga & Flexibility</h3>
+                <p>Improve flexibility, balance and relaxation.</p>
+            </div>
+            <div class="card">
+                <h3>Weight Management</h3>
+                <p>Follow structured fitness programs with professional guidance.</p>
+            </div>
+        </div>
+    </section>
+    <section id="trainers" class="section alternate">
+        <h2>Meet Our Trainers</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Rahul Sharma</h3>
+                <p>Strength Training Expert</p>
+                <p>Experience: 5 Years</p>
+            </div>
+            <div class="card">
+                <h3>Priya Verma</h3>
+                <p>Yoga Instructor</p>
+                <p>Experience: 4 Years</p>
+            </div>
+            <div class="card">
+                <h3>Arjun Singh</h3>
+                <p>Cardio Trainer</p>
+                <p>Experience: 6 Years</p>
+            </div>
+        </div>
+    </section>
+    <section id="plans" class="section">
+        <h2>Membership Plans</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Monthly</h3>
+                <h2>₹1000</h2>
+                <p>Access for 1 month</p>
+            </div>
+            <div class="card">
+                <h3>Quarterly</h3>
+                <h2>₹2700</h2>
+                <p>Access for 3 months</p>
+            </div>
+            <div class="card">
+                <h3>Yearly</h3>
+                <h2>₹9600</h2>
+                <p>Access for 12 months</p>
+            </div>
+        </div>
+    </section>
+    <section class="section alternate">
+        <h2>Facilities & Timings</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <h3>Our Facilities</h3>
+                <p>✔ Modern Gym Equipment</p>
+                <p>✔ Personal Training</p>
+                <p>✔ Locker Rooms</p>
+                <p>✔ Yoga Studio</p>
+                <p>✔ Clean Drinking Water</p>
+            </div>
+            <div class="info-box">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 6 AM - 10 PM</p>
+                <p>Saturday: 7 AM - 9 PM</p>
+                <p>Sunday: 7 AM - 12 PM</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <h2>Membership Registration</h2>
+        <div class="form-container">
+            <form id="membershipForm">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="10-digit phone number">
+                <label>Select Membership Plan</label>
+                <select id="plan">
+                    <option value="">Choose a plan</option>
+                    <option value="1000">Monthly - ₹1000</option>
+                    <option value="2700">Quarterly - ₹2700</option>
+                    <option value="9600">Yearly - ₹9600</option>
+                </select>
+                <label>Select Trainer</label>
+                <select id="trainer">
+                    <option value="">Choose a trainer</option>
+                    <option value="Rahul Sharma">Rahul Sharma</option>
+                    <option value="Priya Verma">Priya Verma</option>
+                    <option value="Arjun Singh">Arjun Singh</option>
+                    <option value="None">No Personal Trainer</option>
+                </select>
+                <div class="fee-box">
+                    Membership Fee: ₹<span id="fee">0</span>
+                </div>
+                <button type="submit" class="btn">
+                    Register Now
+                </button>
+            </form>
+            <div id="confirmation"></div>
+        </div>
+    </section>
+    <section class="section alternate">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What are the gym timings?
+                    <span>+</span>
+                </button>
+                <p class="faq-answer">
+                    We are open from 6 AM to 10 PM on weekdays.
+                </p>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can beginners join?
+                    <span>+</span>
+                </button>
+                <p class="faq-answer">
+                    Yes! Beginners can join and receive guidance
+                    from our professional trainers.
+                </p>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I choose my trainer?
+                    <span>+</span>
+                </button>
+                <p class="faq-answer">
+                    Yes, you can select your preferred trainer
+                    during registration.
+                </p>
+            </div>
+        </div>
+         <div class="back-to-top">
+                <input type="button" value="Back to top" onclick="window.scrollTo({ top: 0, behavior: 'smooth'});">
+            </div>
+    </section>
+    <footer>
+        <h3>FITZONE FITNESS CENTER</h3>
+        <p>Stay Fit. Stay Strong.</p>
+        <p>© 2026 FITZONE. All Rights Reserved.</p>
+    </footer>
+    <script>
+const plan = document.getElementById("plan");
+const fee = document.getElementById("fee");
+const form = document.getElementById("membershipForm");
+const confirmation = document.getElementById("confirmation");
+plan.addEventListener("change", function() {
+    let amount = Number(plan.value);
+    fee.textContent = amount;
+});
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let selectedPlan = plan.value;
+    let trainer = document.getElementById("trainer").value;
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }    
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    let phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+    }
+    if (selectedPlan === "") {
+        alert("Please select a membership plan.");
+        return;
+    }
+    if (trainer === "") {
+        alert("Please select a trainer.");
+        return;
+    }
+    confirmation.innerHTML =
+        "Registration Successful!<br>" +
+        "Welcome, " + name + "!<br>" +
+        "Membership Fee: ₹" + selectedPlan + "<br>" +
+        "Selected Trainer: " + trainer;
+    form.reset();
+    fee.textContent = "0";
+});
+const questions = document.querySelectorAll(".faq-question");
+questions.forEach(function(question) {
+    question.addEventListener("click", function() {
+        let answer = this.nextElementSibling;
+        answer.classList.toggle("show");
+        if (answer.classList.contains("show")) {
+            this.querySelector("span").textContent = "-";
+        } else {
+            this.querySelector("span").textContent = "+";
+        }
+    });
+});</script>
+</body>
+</html>

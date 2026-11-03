@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgray;
+            margin: 20px;
+        }
+        .container{
+            width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid lightgray;
+        }
+        .header{
+            background-color: rgb(2, 77, 103);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .header h2{
+            margin: 0;
+        }
+        .header p{
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        form{
+            padding: 20px;
+        }
+        fieldset{
+            border: 1px solid;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        legend{
+            background-color: rgb(1, 1, 81);
+            color: white;
+            padding: 4px 10px;
+            font-size: 14px;
+        }
+        .form-contol{
+            margin-bottom: 12px;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select{
+            width: 100%;
+            padding: 8px;
+            box-sizing:border-box;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+        }
+        .radio-options{
+            display:inline;
+            font-weight:normal;
+        }
+
+    </style>
+    <script>
+
+       
+        function validateForm() {
+
+
+            let name = document.getElementById("name").value;
+
+
+            name = name.trim();
+
+
+            
+            if (name === "") {
+
+               
+                alert("Name must be filled out");
+
+              
+                return false;
+            }
+
+
+
+          
+            let email = document.getElementById("email").value;
+
+
+            
+            email = email.trim();
+
+
+           
+            if (email === "") {
+
+                
+                alert("Email must be filled out");
+
+                
+                return false;
+            }
+
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+           
+            if (!emailPattern.test(email)) {
+
+             
+                alert("Please enter a valid email address");
+
+            
+                return false;
+            }
+
+
+
+            let password =
+                document.getElementById("password").value;
+
+
+            
+            if (password === "") {
+
+                
+                alert("Password cannot be empty");
+
+                
+                return false;
+            }
+
+            if (password.length < 6) {
+
+              
+                alert("Password must be at least 6 characters long");
+
+                
+                return false;
+            }
+
+
+            if (password.length > 20) {
+
+                
+                alert("Password cannot be more than 20 characters");
+
+               
+                return false;
+            }           
+            let dob = document.getElementById("dob").value;
+
+
+            
+            if (dob === "") {
+
+               
+                alert("Please select your Date of Birth");
+
+                
+                return false;
+            }
+
+
+
+
+
+            
+
+            let gender =
+                document.querySelector(
+                    'input[name="gender"]:checked'
+                );
+
+
+            
+            if (!gender) {
+
+                
+                alert("Please select your gender");
+
+               
+                return false;
+            }
+
+
+
+           
+            let branch =
+                document.querySelector(
+                    'input[name="branch"]:checked'
+                );
+
+
+            
+            if (!branch) {
+
+             
+                alert("Please select a branch");
+
+               
+                return false;
+            }
+
+
+
+            
+
+
+            
+            alert("Form submitted successfully!");
+
+
+            
+            return true;
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Student Registration Form</h2>
+            <p>Web Technology Class Test</p>
+        </div>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-control">
+                    <label>Student Name:</label>
+                    <input type="text" placeholder="Enter your name"
+                </div>
+                <div class="form-control">
+                    <label>Roll Number:</label>
+                    <input type="text" placeholder="Enter your roll number">
+                </div>
+                <div class="form-control">
+                    <label>Email:</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-control">
+                    <label>Password:</label>
+                    <input type="password" placeholder="Enter password">
+                </div>
+                <div class="form-control">
+                    <label>Date of Birth:</label>
+                    <input type="date">
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Academic Information</legend>
+                <div class="form-control">
+                    <label>Gender:</label>
+                    <div class="radio-options">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="form-contol">
+                    <label>Select Branch:</label>
+                    <select>
+                        <option value="">--Select Branch--</option>
+                        <option value="cse">CSE</option>
+                        <option value="ece">ECE</option>
+                        <option value="ee">EE</option>
+                        <option value="me">ME</option>
+                    </select>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>

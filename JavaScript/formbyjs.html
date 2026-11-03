@@ -1,0 +1,756 @@
+<!-- GIFT FROM MY SIDE TO ALL MY STUDENTS ON ENGINNERING DAY🎁🎁🧧 -->
+
+<!-- *FORM VALIDATION CODE* -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Form Validation Example</title>
+
+    <script>
+
+        // This function validates all the form fields.This function is called
+        //  when the user clicks the Submit button.
+
+        function validateForm() {
+
+
+            // --------------------------------------------------
+            // 1. GET NAME
+            // --------------------------------------------------
+
+            // Find the input element whose id is "name".
+            // .value gets the value entered inside that input.
+            // Example: If user enters Rahul, name becomes "Rahul".
+            let name = document.getElementById("name").value;
+
+
+            // trim() removes extra spaces from beginning and end.
+            // Example: "   Rahul   " becomes "Rahul".
+            name = name.trim();
+
+
+            // Check whether the name is empty.
+            // "" represents an empty string.
+            if (name === "") {
+
+                // Display an error message.
+                alert("Name must be filled out");
+
+                // Stop the form from being submitted.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 2. GET EMAIL
+            // --------------------------------------------------
+
+            // Find the email input using its id.
+            // .value gets the email entered by the user.
+            let email = document.getElementById("email").value;
+
+
+            // Remove unnecessary spaces from the email.
+            email = email.trim();
+
+
+            // Check whether the email field is empty.
+            if (email === "") {
+
+                // Display an error message.
+                alert("Email must be filled out");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+            // Create a regular expression for basic email validation.
+            // Example of valid email: abc@gmail.com
+            // Example of invalid email: abc@gmail
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            // test() checks whether the email matches the pattern.
+            // It returns true if the pattern matches.
+            // It returns false if the pattern does not match.
+            if (!emailPattern.test(email)) {
+
+                // Display an error message.
+                alert("Please enter a valid email address");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 3. PASSWORD
+            // --------------------------------------------------
+
+            // Find the password input using its id.
+            // .value gets the password entered by the user.
+            let password =
+                document.getElementById("password").value;
+
+
+            // Check whether the password is empty.
+            if (password === "") {
+
+                // Display an error message.
+                alert("Password cannot be empty");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+            // .length gives the number of characters.
+            // Example: "hello".length gives 5.
+            if (password.length < 6) {
+
+                // Password must contain at least 6 characters.
+                alert("Password must be at least 6 characters long");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+            // Check whether password contains more than 20 characters.
+            if (password.length > 20) {
+
+                // Display an error message.
+                alert("Password cannot be more than 20 characters");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 4. AGE
+            // --------------------------------------------------
+
+            // Find the age input using its id.
+            // .value gets the value entered by the user.
+            let age = document.getElementById("age").value;
+
+
+            // Check whether the age field is empty.
+            if (age === "") {
+
+                // Display an error message.
+                alert("Age must be filled out");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+            // Convert the age from string to number.
+            // Example: "20" becomes 20.
+            age = Number(age);
+
+
+            // Check whether the entered value is a valid number.
+            if (isNaN(age)) {
+
+                // Display an error message.
+                alert("Please enter a valid age");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+            // Age cannot be less than zero.
+            // Example: -5 is invalid.
+            if (age < 0) {
+
+                // Display an error message.
+                alert("Age cannot be less than 0");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 5. DATE OF BIRTH
+            // --------------------------------------------------
+
+            // Find the date input using its id.
+            // .value gets the selected date.
+            let dob = document.getElementById("dob").value;
+
+
+            // Check whether the user selected a date.
+            if (dob === "") {
+
+                // Display an error message.
+                alert("Please select your Date of Birth");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 6. FAVORITE COLOR
+            // --------------------------------------------------
+
+            // Favorite Color is optional.
+            // Therefore, no validation is required for this field.
+
+
+
+            // --------------------------------------------------
+            // 7. WEBSITE
+            // --------------------------------------------------
+
+            // Find the website input using its id.
+            // .value gets the website entered by the user.
+            let website =
+                document.getElementById("website").value;
+
+
+            // Remove unnecessary spaces.
+            website = website.trim();
+
+
+            // Check whether the website field is empty.
+            if (website === "") {
+
+                // Display an error message.
+                alert("Website cannot be empty");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+            // Check whether website starts with http:// or https://.
+            // startsWith() checks the beginning of a string.
+            if (!website.startsWith("http://") &&
+                !website.startsWith("https://")) {
+
+                // Display an error message.
+                alert(
+                    "Website must start with http:// or https://"
+                );
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 8. DEPARTMENT
+            // --------------------------------------------------
+
+            // Find the department dropdown using its id.
+            // .value gets the selected option.
+            let department =
+                document.getElementById("department").value;
+
+
+            // Check whether the user selected a department.
+            if (department === "") {
+
+                // Display an error message.
+                alert("Please select your department");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 9. MESSAGE
+            // --------------------------------------------------
+
+            // Find the message textarea using its id.
+            // .value gets the text entered by the user.
+            let message =
+                document.getElementById("message").value;
+
+
+            // Remove unnecessary spaces.
+            message = message.trim();
+
+
+            // Check whether the message is empty.
+            if (message === "") {
+
+                // Display an error message.
+                alert("Please enter your message");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 10. ADDRESS
+            // --------------------------------------------------
+
+            // Find the address textarea using its id.
+            // .value gets the address entered by the user.
+            let address =
+                document.getElementById("address").value;
+
+
+            // Remove unnecessary spaces.
+            address = address.trim();
+
+
+            // Check whether the address is empty.
+            if (address === "") {
+
+                // Display an error message.
+                alert("Please enter your address");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 11. GENDER - RADIO BUTTON
+            // --------------------------------------------------
+
+            // All gender radio buttons have name="gender".
+            // Only one gender can be selected.
+            let gender =
+                document.querySelector(
+                    'input[name="gender"]:checked'
+                );
+
+
+            // :checked finds the currently selected radio button.
+            // If nothing is selected, gender will be null.
+            if (!gender) {
+
+                // Display an error message.
+                alert("Please select your gender");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 12. COURSE - RADIO BUTTON
+            // --------------------------------------------------
+
+            // All course radio buttons have name="course".
+            // Only one course can be selected.
+            let course =
+                document.querySelector(
+                    'input[name="course"]:checked'
+                );
+
+
+            // Check whether a course has been selected.
+            if (!course) {
+
+                // Display an error message.
+                alert("Please select a course");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // 13. HOBBIES - CHECKBOX
+            // --------------------------------------------------
+
+            // Checkboxes allow the user to select multiple options.
+            // querySelectorAll() finds all matching elements.
+            let hobbies =
+                document.querySelectorAll(
+                    'input[name="hobbies"]:checked'
+                );
+
+
+            // .length tells how many hobbies are selected.
+            // 0 means no hobby has been selected.
+            if (hobbies.length === 0) {
+
+                // Display an error message.
+                alert("Please select at least one hobby");
+
+                // Stop form submission.
+                return false;
+            }
+
+
+
+            // --------------------------------------------------
+            // ALL VALIDATIONS PASSED
+            // --------------------------------------------------
+
+            // This message is displayed when every validation succeeds.
+            alert("Form submitted successfully!");
+
+
+            // true allows the form to be submitted.
+            return true;
+
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- This form calls validateForm() when the user clicks Submit. -->
+    <!-- novalidate prevents the browser's built-in validation. -->
+    <!-- JavaScript will perform the validation instead. -->
+
+    <form onsubmit="return validateForm()" novalidate>
+
+
+        <fieldset>
+
+            <legend>Form1</legend>
+
+
+            <!-- NAME -->
+
+            <!-- for="name" connects the label with id="name". -->
+            <label for="name">Name:</label>
+
+            <!-- id="name" allows JavaScript to find this input. -->
+            <input type="text"
+                   id="name"
+                   name="name"
+                   placeholder="enter name">
+
+
+            <br><br>
+
+
+
+            <!-- EMAIL -->
+
+            <!-- This label describes the email input. -->
+            <label for="email">Email:</label>
+
+            <!-- JavaScript will check the email format. -->
+            <input type="text"
+                   id="email"
+                   name="email"
+                   placeholder="Enter Gmail">
+
+
+            <br><br>
+
+
+
+            <!-- PASSWORD -->
+
+            <!-- This label describes the password input. -->
+            <label for="password">Password:</label>
+
+            <!-- Password characters are hidden by the browser. -->
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter password">
+
+
+            <br><br>
+
+
+
+            <!-- AGE -->
+
+            <!-- This label describes the age input. -->
+            <label for="age">Age:</label>
+
+            <!-- type="number" allows numeric input. -->
+            <input type="number"
+                   id="age"
+                   name="age">
+
+
+            <br><br>
+
+
+
+            <!-- DATE OF BIRTH -->
+
+            <!-- This label describes the date input. -->
+            <label for="dob">Date of Birth:</label>
+
+            <!-- type="date" provides a date picker. -->
+            <input type="date"
+                   id="dob"
+                   name="dob">
+
+
+            <br><br>
+
+
+
+            <!-- FAVORITE COLOR -->
+
+            <!-- This label describes the color input. -->
+            <label for="color">Favorite Color:</label>
+
+            <!-- type="color" displays a color picker. -->
+            <input type="color"
+                   id="color"
+                   name="color">
+
+
+            <br><br>
+
+
+
+            <!-- WEBSITE -->
+
+            <!-- This label describes the website input. -->
+            <label for="website">Website:</label>
+
+            <!-- JavaScript checks whether the website starts with http/https. -->
+            <input type="text"
+                   id="website"
+                   name="website"
+                   placeholder="https://example.com">
+
+
+            <br><br>
+
+
+
+            <!-- DEPARTMENT -->
+
+            <!-- This label describes the dropdown. -->
+            <label for="department">
+                Choose your Department:
+            </label>
+
+
+            <!-- select creates a dropdown list. -->
+            <select id="department"
+                    name="department">
+
+                <!-- Empty value means no department is selected. -->
+                <option value="">
+                    Select Department
+                </option>
+
+                <!-- Computer Science option. -->
+                <option value="Computer Science">
+                    Computer Science
+                </option>
+
+                <!-- Information Technology option. -->
+                <option value="Information Technology">
+                    Information Technology
+                </option>
+
+                <!-- Electronics option. -->
+                <option value="Electronics">
+                    Electronics
+                </option>
+
+                <!-- Mechanical option. -->
+                <option value="Mechanical">
+                    Mechanical
+                </option>
+
+            </select>
+
+
+            <br><br>
+
+
+
+            <!-- MESSAGE -->
+
+            <!-- This label describes the message textarea. -->
+            <label for="message">Message:</label>
+
+            <br>
+
+            <!-- textarea allows multiple lines of text. -->
+            <textarea id="message"
+                      name="message"
+                      rows="8"
+                      cols="30"
+                      placeholder="Enter text"></textarea>
+
+
+            <br><br>
+
+
+
+            <!-- ADDRESS -->
+
+            <!-- This label describes the address textarea. -->
+            <label for="address">Address:</label>
+
+            <br>
+
+            <!-- This textarea allows the user to enter an address. -->
+            <textarea id="address"
+                      name="address"
+                      rows="8"
+                      cols="30"
+                      placeholder="Enter text"></textarea>
+
+
+            <br><br>
+
+
+
+            <!-- GENDER -->
+
+            <h2>Select Gender</h2>
+
+
+            <!-- Same name means these radio buttons form one group. -->
+
+            <input type="radio"
+                   id="male"
+                   name="gender"
+                   value="Male">
+
+            <label for="male">Male</label>
+
+
+            <br>
+
+
+            <input type="radio"
+                   id="female"
+                   name="gender"
+                   value="Female">
+
+            <label for="female">Female</label>
+
+
+            <br>
+
+
+            <input type="radio"
+                   id="other"
+                   name="gender"
+                   value="Other">
+
+            <label for="other">Other</label>
+
+
+            <br><br>
+
+
+
+            <!-- COURSE -->
+
+            <!-- These radio buttons allow only one course to be selected. -->
+
+            <input type="radio"
+                   id="web"
+                   name="course"
+                   value="Web Design">
+
+            <label for="web">Web Design</label>
+
+
+            <input type="radio"
+                   id="cloud"
+                   name="course"
+                   value="Cloud Computing">
+
+            <label for="cloud">Cloud Computing</label>
+
+
+            <input type="radio"
+                   id="aiml"
+                   name="course"
+                   value="AI & ML">
+
+            <label for="aiml">AI & ML</label>
+
+
+            <br><br>
+
+
+
+            <!-- HOBBIES -->
+
+            <h3>Select your hobbies:</h3>
+
+
+            <!-- Checkboxes allow multiple options to be selected. -->
+
+            <input type="checkbox"
+                   id="reading"
+                   name="hobbies"
+                   value="Reading">
+
+            <label for="reading">Reading</label>
+
+
+            <br>
+
+
+            <input type="checkbox"
+                   id="traveling"
+                   name="hobbies"
+                   value="Traveling">
+
+            <label for="traveling">Traveling</label>
+
+
+            <br>
+
+
+            <input type="checkbox"
+                   id="sports"
+                   name="hobbies"
+                   value="Sports">
+
+            <label for="sports">Sports</label>
+
+
+            <br><br>
+
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <!-- Clicking Submit calls validateForm(). -->
+            <input type="submit"
+                   value="Submit">
+
+        </fieldset>
+
+    </form>
+
+
+</body>
+
+</html>

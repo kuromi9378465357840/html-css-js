@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <title>FIRST</title>
+    </head>
+    <body>
+        <!-- // separate javascript file is stored as .js
+        // backend and frontend both.
+        // form validation. -->
+        <form>
+    <fieldset>
+        <!-- fieldset makes border around form. and legend helps in writing word outside boundary -->
+        <legend>Personal Information</legend>
+        <label for= "name">Name:</label>
+        <!-- label for helps in inputs. helps in mapping. -->
+        <input type="text" id="name" name="name" placeholder="enter name"><br><br>
+
+        <label for="email id">Gmail id</label>
+        <input type="email" id="email id" name="email" placeholder="enter email"><br><br><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="enter password"><br><br>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="select age"> <br><br>
+
+        <label for="date of birth">DOB</label>
+        <input type="date" id="DOB" name="DOB"> <br><br>
+
+        <label for="favourite colour">Favourite colour</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="Website">Website</label>
+        <input type="url" id="url"> <br><br>
+
+        <label for="Choose your department">Choose Your Department</label>
+        <select id="dept" name="department">
+            <option value="cse"> CS </option>
+            <option value="IT"> IT </option>
+            <option value="aiml"> CSE AIML</option>
+            <option value="aero"> CSIT</option>
+        </select> <br><br>
+
+        <textarea name="message" rows="5" cols="40" placeholder="Enter"></textarea><br>
+        <textarea name="message" rows="3" cols="40" placeholder="Enter"></textarea>
+        <br><br>
+
+        <h3>Select Gender</h3>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="male" id="male">
+        <br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <br>
+        <label for="other">Other</label>
+        <input type="radio" name="gender" value="other" id="other">
+        <br>
+
+        <h3>Select your hobbies</h3>
+        <label for="reading">Reading</label>
+        <input type="checkbox" name="reading" value="reading" id="reading">
+        <br>
+        <label for="nature">Nature exploring</label>
+        <input type="checkbox" name="nature" value="nature" id="nature">
+        <br>
+        <label for="sleeping">Sleeping</label>
+        <input type="checkbox" name="sleeping" value="sleeping" id="sleeping">
+        <br><br>
+
+        <input type="submit"
+                   value="Submit">
+
+
+    </fieldset>
+    </form>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            name = name.trim();
+            if (name === "") {
+                // === (strictly coupled) checks for both value and type. == (loosely coupled) checks only for value.
+                alert("Name is required");
+                return false;
+            }
+            // email validation
+            let email = document.getElementById("email id").value;
+            email = email.trim();
+            if (email ===""){
+                alert("email is required");
+                return false;
+            }
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // it checks the whether the email matches the pattern. it is regex code.
+            // it returns true if it matches the pattern otherwise false.
+            // ^ start of pattern, $ end of pattern, s is whitespace,@ mandatory.
+            if (!emailPattern.test(email)) {
+                alert ("Please enter a valid email address");
+                return false;
+            }
+            let password = document.getElementById("password").value;
+            password = password.trim();
+            if (password === ""){
+                alert ("password is required");
+                return false;
+            }
+            if (password.length >20){
+                alert("Password cannot be more than 20 characters");
+                return false;
+            }
+            let age = document.getElementById("age").value;
+            if (age ===""){
+                alert("age is required");
+                return false;
+            }
+            age = Number(age);
+            if (isNaN(age)){
+                alert("please enter a valid age");
+                return false;
+            }
+            if (age<0){
+                alert("age cannot be negative");
+                return false;
+            }
+            let dob = document.getElementById("DOB").value;
+            if (dob === ""){
+                alert("DOB is required");
+                return false;
+            }
+        }
+    </script>
+    </body>
+</html>

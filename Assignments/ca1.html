@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>University Scholarship Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: lightgray;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: navy;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid navy;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid lightgray;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: navy;
+            color: white;
+        }
+
+        .logo{
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+           
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+        }
+
+        .back-to-top {
+            position:fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="icon.jpeg" alt="University logo" class="logo">
+        <h1>KIET Deemed To Be University Scholarship Portal</h1>
+        <p>Empowering students to achieve their academic dreams</p>
+    </header>
+
+   
+    <section>
+        <h2>Scholarship Categories</h2>
+        <ul>
+            <li><strong>Merit-Based Scholarship:</strong> For students with exceptional academic performance (above 90% aggregate).</li>
+            <li><strong>Need-Based Financial Aid:</strong> For students facing financial constraints.</li>
+            <li><strong>Sports Excellence Scholarship:</strong> For state or national-level sports achievers.</li>
+        </ul>
+    </section>
+
+   
+    <section>
+        <h2>Eligibility Criteria</h2>
+        <ul>
+            <li>Must be enrolled or accepted as a full-time student at the university.</li>
+            <li>Minimum CGPA of 3.5 or equivalent percentage for merit categories.</li>
+            <li>Family annual income must be below specified limits for need-based categories.</li>
+        </ul>
+    </section>
+
+   
+    <section>
+        <h2>Required Documents</h2>
+        <ul>
+            <li>Latest Academic Transcripts / Mark sheets</li>
+            <li>Proof of Family Income (for need-based aid)</li>
+            <li>Valid ID Proof (Aadhaar / Passport / Student ID)</li>
+            <li>Recommendation Letter from a faculty member</li>
+        </ul>
+    </section>
+
+   
+    <section>
+        <h2>Important Dates</h2>
+        <table>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>Application Start Date</td>
+                <td>1st August 2026</td>
+            </tr>
+            <tr>
+                <td>Last Date to Apply</td>
+                <td>31st August 2026</td>
+            </tr>
+            <tr>
+                <td>Announcement of Results</td>
+                <td>15th September 2026</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Scholarship Application Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Select Scholarship Category:</label>
+                <select id="category" name="category" required>
+                    <option value="">-- Choose Category --</option>
+                    <option value="merit">Merit-Based Scholarship</option>
+                    <option value="need">Need-Based Financial Aid</option>
+                    <option value="sports">Sports Excellence Scholarship</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sop">Statement of Purpose (Why do you deserve this scholarship?):</label>
+                <textarea id="sop" name="sop" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit Application">
+            </div>
+
+            <div class="back-to-top">
+                <input type="button" value="Back to top" onclick="window.scrollTo({ top: 0, behavior: 'smooth'});">
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>
